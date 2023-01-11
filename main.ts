@@ -8,7 +8,7 @@ enum LeadingZeroEnum {
 /**
 * Custom blocks
 */
-//% weight=100 color=#0fbc11 icon=""
+//% weight=100 color=#0fbc11 icon="₅"
 namespace SmallDigits {
     function DisplayDigit(Digit: number, Offset: number): void {
         if (Digit != 1) {
