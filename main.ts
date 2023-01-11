@@ -45,7 +45,7 @@ namespace SmallDigits {
      * @param LeadingZero Give (0-9) a leading zero
      */
     //% block
-    export function DisplayNumber(n: number, LeadingZero: LeadingZeroEnum): void {
+    export function ShowNumber(n: number, LeadingZero: LeadingZeroEnum): void {
         if ((n > 99) || (n < 0)) {
             basic.showNumber(n)
         } else {
