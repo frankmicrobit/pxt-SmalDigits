@@ -1,8 +1,8 @@
 enum LeadingZeroEnum {
-    //% block="Yes"
-    True,
-    //% block="No"
-    False
+    //% block="Leading Zero"
+    zz,
+    //% block="No leading zero"
+    nz
 }
 
 /**
@@ -50,7 +50,7 @@ namespace SmallDigits {
             basic.showNumber(n)
         } else {
             basic.clearScreen()
-            if ((n > 9) || (LeadingZero = 1)) {
+            if ((n > 9) || (LeadingZero = LeadingZeroEnum.zz)) {
                 DisplayDigit(Math.trunc(n / 10), 0)
             }
             DisplayDigit(n % 10, 3)
