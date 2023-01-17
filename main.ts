@@ -1,3 +1,5 @@
+//% color=190 weight=100 icon="\2081" block="Basic Blocks"
+
 enum LeadingZeroEnum {
     //% block="Leading Zero"
     zz,
