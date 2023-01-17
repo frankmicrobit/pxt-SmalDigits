@@ -51,7 +51,7 @@ namespace SmallDigits {
             basic.showNumber(n)
         } else {
             basic.clearScreen()
-            if ((n > 9) || ((n >=0) && (LeadingZero = LeadingZeroEnum.zz))) {
+            if ((n > 9) || ((n >= 0) && (LeadingZero == LeadingZeroEnum.zz))) {
                 DisplayDigit(Math.trunc(n / 10), 0)
             }
             if (n < 0) {
