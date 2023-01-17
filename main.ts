@@ -56,7 +56,7 @@ namespace SmallDigits {
             }
             if (n < 0) {
                 led.plot(0, 2)
-                led.plot(1, 3)
+                led.plot(1, 2)
             }
             DisplayDigit(n % 10, 3)
         }
