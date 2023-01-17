@@ -11,13 +11,14 @@ enum LeadingZeroEnum {
 //% weight=100 color=#0fbc11 icon="₅"
 namespace SmallDigits {
     function DisplayDigit(Digit: number, Offset: number): void {
+        Digit = Math.abs(Digit)
         if (Digit != 1) {
             led.plot(0 + Offset, 0)
         }
         if (Digit != 2 && Digit != 3 && Digit != 7) {
             led.plot(0 + Offset, 1)
         }
-        if (Digit == 0 || Digit == 2 || Digit == 3 || Digit == 4 || Digit == 5 || Digit == 6) {
+        if (Digit == 0 || Digit == 2 || Digit == 3 || Digit == 4 || Digit == 5 || Digit == 6 || Digit == 9) {
             led.plot(0 + Offset, 2)
         }
         if (Digit == 0 || Digit == 2 || Digit == 6 || Digit == 8) {
@@ -46,7 +47,7 @@ namespace SmallDigits {
      */
     //% block
     export function ShowNumber(n: number, LeadingZero: LeadingZeroEnum): void {
-        if ((n > 99) || (n < 0)) {
+        if ((n > 99) || (n < -9)) {
             basic.showNumber(n)
         } else {
             basic.clearScreen()
