@@ -4,11 +4,6 @@ enum LeadingZeroEnum {
     //% block="No leading zero"
     nz
 }
-
-/**
-* Custom blocks
-*/
-//% weight=100 color=#0fbc11 icon="₅"
 namespace SmallDigits {
     function DisplayDigit(Digit: number, Offset: number): void {
         if (Digit != 1) {
@@ -17,7 +12,7 @@ namespace SmallDigits {
         if (Digit != 2 && Digit != 3 && Digit != 7) {
             led.plot(0 + Offset, 1)
         }
-        if (Digit == 0 || Digit == 2 || Digit == 3 || Digit == 4 || Digit == 5 || Digit == 6) {
+        if (Digit == 0 || Digit == 2 || Digit == 3 || Digit == 4 || Digit == 5 || Digit == 6 || Digit == 9) {
             led.plot(0 + Offset, 2)
         }
         if (Digit == 0 || Digit == 2 || Digit == 6 || Digit == 8) {
@@ -50,8 +45,12 @@ namespace SmallDigits {
             basic.showNumber(n)
         } else {
             basic.clearScreen()
-            if ((n > 9) || (LeadingZero = LeadingZeroEnum.zz)) {
+            if ((n > 9) || ((LeadingZero = LeadingZeroEnum.zz) && (n >= 0))) {
                 DisplayDigit(Math.trunc(n / 10), 0)
+            }
+            if (n < 0) {
+                led.plot(0, 2)
+                led.plot(1, 3)
             }
             DisplayDigit(n % 10, 3)
         }
