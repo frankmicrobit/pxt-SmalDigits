@@ -33,7 +33,9 @@ namespace SmallDigits {
         if (Digit != 4 && Digit != 5 && Digit != 6) {
             led.plot(1 + Offset, 1)
         }
-        led.plot(1 + Offset, 2)
+        if (Digit != 8) {
+            led.plot(1 + Offset, 2)
+        }
         if (Digit != 2) {
             led.plot(1 + Offset, 3)
         }
